@@ -1,8 +1,8 @@
-# Importamos las librerías necesarias
+# Importamos librerías
 import socket
 import json
 
-# Configuración del servidor
+# Configuración del server
 HOST = "localhost"
 PORT = 5000
 
@@ -14,7 +14,7 @@ def enviar_tarea(comando, dato):
     la envía al servidor y espera la respuesta.
     """
 
-    # Creamos la tarea como diccionario
+    # Creamos la tarea
     tarea = {
         "comando": comando,
         "dato": dato
@@ -36,7 +36,7 @@ def enviar_tarea(comando, dato):
         return json.loads(respuesta)
 
 
-# Función principal del cliente
+# Función main del cliente
 def main():
     """
     Menú principal del cliente.

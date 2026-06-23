@@ -1,18 +1,18 @@
-# Importamos las librerías necesarias
+# Importamos librerias
 import socket
 import json
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor
 
-# Configuración del servidor
+# Configuracion del servidor
 HOST = "localhost"
 PORT = 5000
 
-# Cantidad de workers/hilos que tendrá el servidor para procesar tareas
+# Definimos cantidad de workers
 MAX_WORKERS = 3
 
 
-# Función para guardar un registro de cada tarea procesada
+# Funcion para guardar un registro de cada tarea procesada
 def guardar_log(addr, tarea, resultado):
     registro = {
         "fecha": datetime.now().isoformat(),
@@ -25,7 +25,7 @@ def guardar_log(addr, tarea, resultado):
         archivo.write(json.dumps(registro, ensure_ascii=False) + "\n")
 
 
-# Función que procesa la tarea recibida
+# Funcion que procesa la tarea recibida
 def procesar_tarea(tarea):
     try:
         comando = tarea.get("comando")
@@ -67,7 +67,7 @@ def procesar_tarea(tarea):
         }
 
 
-# Función que maneja la conexión con cada cliente
+# Funcion que maneja la conexion con cada cliente
 def manejar_cliente(conn, addr, executor):
     print(f"Conectado desde: {addr}")
 
@@ -103,7 +103,7 @@ def manejar_cliente(conn, addr, executor):
             # Esperamos el resultado
             resultado = future.result()
 
-            # Guardamos un log de auditoría básico
+            # Guardamos un log de auditoria
             guardar_log(addr, tarea, resultado)
 
             # Respondemos al cliente
@@ -117,7 +117,7 @@ def manejar_cliente(conn, addr, executor):
         conn.close()
 
 
-# Función principal del servidor
+# Funcion main
 def iniciar_servidor():
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
 

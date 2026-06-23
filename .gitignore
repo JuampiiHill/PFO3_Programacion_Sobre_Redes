@@ -1,0 +1,16 @@
+# Archivos compilados de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entornos virtuales
+venv/
+.env
+
+# Logs generados por la aplicación
+tareas_log.jsonl
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db

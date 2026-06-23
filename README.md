@@ -15,9 +15,7 @@ Clonar el repositorio:
 
 git clone https://github.com/JuampiiHill/PFO3_Programacion_sobre_Redes.git
 
-Ingresar a la carpeta del proyecto:
-
-cd PFO3_Programacion_sobre_Redes
+Ingresar a la carpeta del proyecto
 
 ## Ejecución
 
@@ -35,10 +33,10 @@ python client.py
 
 El cliente puede enviar las siguientes tareas al servidor:
 
-* Convertir texto a mayúsculas.
-* Convertir texto a minúsculas.
-* Invertir texto.
-* Calcular la longitud de una cadena de texto.
+- Convertir texto a mayúsculas.
+- Convertir texto a minúsculas.
+- Invertir texto.
+- Calcular la longitud de una cadena de texto.
 
 Las tareas son enviadas en formato JSON y procesadas por los workers del servidor.
 
